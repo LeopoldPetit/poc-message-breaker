@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-consumer-kafka
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      properties:
+        spring.deserializer.value.delegate.class: io.confluent.kafka.serializers.KafkaAvroDeserializer
+        schema.registry.url: ${poc.schema-registry.url}
+        specific.avro.reader: true
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      acks: all
+      properties:
+        schema.registry.url: ${poc.schema-registry.url}
+        auto.register.schemas: false
+        value.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+    listener:
+      ack-mode: manual_immediate
+
+poc:
+  schema-registry:
+    url: ${SCHEMA_REGISTRY_URL:http://localhost:8085}
+  processing:
+    delay-ms: ${PROCESSING_DELAY_MS:0}
+    failure-rate: ${PROCESSING_FAILURE_RATE:0}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info
+  metrics:
+    distribution:
+      percentiles-histogram:
+        poc.e2e.latency: true
+        poc.consumer.processing: true

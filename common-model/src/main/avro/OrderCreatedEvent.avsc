@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "OrderCreatedEvent",
+  "namespace": "com.github.leopoldpetit.pocmb.events",
+  "fields": [
+    {"name": "eventId", "type": "string"},
+    {"name": "orderId", "type": "string"},
+    {"name": "sequence", "type": "int", "default": 1},
+    {"name": "customerId", "type": "string"},
+    {"name": "amountCents", "type": "long"},
+    {"name": "items", "type": {"type": "array", "items": "com.github.leopoldpetit.pocmb.events.OrderItem"}},
+    {"name": "payloadPadding", "type": "string", "default": ""},
+    {"name": "occurredAt", "type": "long", "doc": "epoch millis"},
+    {"name": "producedAt", "type": "long", "doc": "epoch millis, used for end-to-end latency"}
+  ]
+}

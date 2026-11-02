@@ -1,0 +1,76 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "graphTooltip": 1,
+  "panels": [
+    {
+      "id": 1, "type": "timeseries", "title": "Consumed throughput (msg/s, status=ok)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "sum by (transport, mode) (rate(poc_consumer_processed_total{status=\"ok\"}[1m]))", "legendFormat": "{{transport}} {{mode}}"}]
+    },
+    {
+      "id": 2, "type": "timeseries", "title": "Produced throughput (msg/s, confirmed)",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "sum by (transport) (rate(poc_producer_published_total[1m]))", "legendFormat": "{{transport}}"}]
+    },
+    {
+      "id": 3, "type": "timeseries", "title": "End-to-end latency p50 / p95 / p99 (s)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [
+        {"refId": "A", "expr": "histogram_quantile(0.50, sum by (le, transport) (rate(poc_e2e_latency_seconds_bucket{mode=\"live\"}[1m])))", "legendFormat": "p50 {{transport}}"},
+        {"refId": "B", "expr": "histogram_quantile(0.95, sum by (le, transport) (rate(poc_e2e_latency_seconds_bucket{mode=\"live\"}[1m])))", "legendFormat": "p95 {{transport}}"},
+        {"refId": "C", "expr": "histogram_quantile(0.99, sum by (le, transport) (rate(poc_e2e_latency_seconds_bucket{mode=\"live\"}[1m])))", "legendFormat": "p99 {{transport}}"}
+      ]
+    },
+    {
+      "id": 4, "type": "timeseries", "title": "Backlog (Kafka consumer lag / RabbitMQ messages ready)",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [
+        {"refId": "A", "expr": "max by (client_id) (kafka_consumer_fetch_manager_records_lag_max)", "legendFormat": "kafka lag {{client_id}}"},
+        {"refId": "B", "expr": "sum by (queue) (rabbitmq_queue_messages_ready{queue=~\"orders.*\"})", "legendFormat": "rabbit ready {{queue}}"}
+      ]
+    },
+    {
+      "id": 5, "type": "timeseries", "title": "Processing time p95 (s)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "histogram_quantile(0.95, sum by (le, transport) (rate(poc_consumer_processing_seconds_bucket[1m])))", "legendFormat": "{{transport}}"}]
+    },
+    {
+      "id": 6, "type": "timeseries", "title": "Producer confirm latency p95 (s)",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "histogram_quantile(0.95, sum by (le, transport) (rate(poc_producer_confirm_seconds_bucket[1m])))", "legendFormat": "{{transport}}"}]
+    },
+    {
+      "id": 7, "type": "timeseries", "title": "Dead-lettered messages (per 5 min)",
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 24},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "sum by (transport) (increase(poc_dlq_published_total[5m]))", "legendFormat": "{{transport}}"}]
+    },
+    {
+      "id": 8, "type": "stat", "title": "Sequence violations (must stay 0)",
+      "gridPos": {"h": 8, "w": 6, "x": 12, "y": 24},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "sum by (transport) (poc_consumer_sequence_violations_total)", "legendFormat": "{{transport}}"}]
+    },
+    {
+      "id": 9, "type": "timeseries", "title": "In-flight messages in consumers",
+      "gridPos": {"h": 8, "w": 6, "x": 18, "y": 24},
+      "datasource": {"type": "prometheus", "uid": "prometheus"},
+      "targets": [{"refId": "A", "expr": "sum by (transport) (poc_consumer_inflight)", "legendFormat": "{{transport}}"}]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "tags": ["poc", "kafka", "rabbitmq"],
+  "time": {"from": "now-15m", "to": "now"},
+  "timezone": "browser",
+  "title": "Kafka vs RabbitMQ - POC",
+  "uid": "poc-kafka-vs-rabbitmq",
+  "version": 1
+}

@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: order-producer-kafka
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['order-producer-kafka:8080']
+
+  - job_name: order-producer-rabbitmq
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['order-producer-rabbitmq:8080']
+
+  - job_name: order-consumer-kafka
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['order-consumer-kafka:8080']
+
+  - job_name: order-consumer-rabbitmq
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['order-consumer-rabbitmq:8080']
+
+  - job_name: kafka-broker
+    static_configs:
+      - targets: ['kafka:7071']
+
+  - job_name: rabbitmq-broker
+    static_configs:
+      - targets: ['rabbitmq:15692']

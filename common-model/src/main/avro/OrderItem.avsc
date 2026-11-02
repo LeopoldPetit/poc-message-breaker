@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "OrderItem",
+  "namespace": "com.github.leopoldpetit.pocmb.events",
+  "fields": [
+    {"name": "productId", "type": "string"},
+    {"name": "quantity", "type": "int"}
+  ]
+}

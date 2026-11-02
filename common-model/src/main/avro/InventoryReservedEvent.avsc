@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "name": "InventoryReservedEvent",
+  "namespace": "com.github.leopoldpetit.pocmb.events",
+  "fields": [
+    {"name": "eventId", "type": "string"},
+    {"name": "orderId", "type": "string"},
+    {"name": "sequence", "type": "int", "default": 3},
+    {"name": "status", "type": {
+      "type": "enum",
+      "name": "InventoryStatus",
+      "symbols": ["RESERVED", "OUT_OF_STOCK"]
+    }},
+    {"name": "occurredAt", "type": "long"},
+    {"name": "producedAt", "type": "long"}
+  ]
+}

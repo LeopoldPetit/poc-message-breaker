@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-consumer-rabbitmq
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: 5672
+    username: ${RABBITMQ_USER:poc}
+    password: ${RABBITMQ_PASSWORD:poc}
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: ${RABBITMQ_PREFETCH:10}
+        default-requeue-rejected: false
+
+poc:
+  schema-registry:
+    url: ${SCHEMA_REGISTRY_URL:http://localhost:8085}
+  processing:
+    delay-ms: ${PROCESSING_DELAY_MS:0}
+    failure-rate: ${PROCESSING_FAILURE_RATE:0}
+  rabbitmq:
+    retry:
+      max-attempts: 3
+      backoff-ms: 1000
+    stream:
+      enabled: ${STREAM_CONSUMER_ENABLED:true}
+      host: ${RABBITMQ_HOST:localhost}
+      port: ${RABBITMQ_STREAM_PORT:5552}
+      username: ${RABBITMQ_USER:poc}
+      password: ${RABBITMQ_PASSWORD:poc}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info
+  metrics:
+    distribution:
+      percentiles-histogram:
+        poc.e2e.latency: true
+        poc.consumer.processing: true

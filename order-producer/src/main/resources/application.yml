@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-producer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info
+  metrics:
+    distribution:
+      percentiles-histogram:
+        poc.producer.confirm: true
+
+poc:
+  schema-registry:
+    url: ${SCHEMA_REGISTRY_URL:http://localhost:8085}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: kafka
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      acks: all
+      properties:
+        enable.idempotence: true
+        max.in.flight.requests.per.connection: 5
+        auto.register.schemas: true
+        value.subject.name.strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+        schema.registry.url: ${poc.schema-registry.url}
+management:
+  health:
+    rabbit:
+      enabled: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: rabbitmq
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: 5672
+    username: ${RABBITMQ_USER:poc}
+    password: ${RABBITMQ_PASSWORD:poc}
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+management:
+  health:
+    rabbit:
+      enabled: true

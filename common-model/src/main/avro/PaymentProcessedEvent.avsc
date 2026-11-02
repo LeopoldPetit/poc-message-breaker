@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "PaymentProcessedEvent",
+  "namespace": "com.github.leopoldpetit.pocmb.events",
+  "fields": [
+    {"name": "eventId", "type": "string"},
+    {"name": "orderId", "type": "string"},
+    {"name": "sequence", "type": "int", "default": 2},
+    {"name": "status", "type": {
+      "type": "enum",
+      "name": "PaymentStatus",
+      "symbols": ["SUCCESS", "FAILED"]
+    }},
+    {"name": "transactionId", "type": "string"},
+    {"name": "occurredAt", "type": "long"},
+    {"name": "producedAt", "type": "long"}
+  ]
+}
