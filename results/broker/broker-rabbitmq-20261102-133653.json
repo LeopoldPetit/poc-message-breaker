@@ -1,0 +1,28 @@
+{
+  "run_id": "broker-rabbitmq-20261102-133653",
+  "transport": "rabbitmq",
+  "broker_down_s": 27.4,
+  "schema_registry_restarted": false,
+  "outage_to_first_confirm_s": 36.16,
+  "first_confirm_after_recovery_s": 8.73,
+  "orders_outcome": {
+    "completed": 2717,
+    "invalid_sent": 0,
+    "failed": 283,
+    "dropped": 31329
+  },
+  "producer_nacks": 9,
+  "producer_wall_s": 686.8,
+  "drain_after_end_s": 0.02,
+  "audit": {
+    "events_produced": 8156,
+    "events_consumed_distinct": 8165,
+    "consumer_rows": 8165,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 9,
+    "orders_checked": 2726,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 169
+  }
+}

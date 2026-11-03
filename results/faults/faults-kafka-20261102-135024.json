@@ -1,0 +1,98 @@
+{
+  "run_id": "faults-kafka-20261102-135024",
+  "transport": "kafka",
+  "orders": 600,
+  "consumers": 1,
+  "live": true,
+  "delay_ms": 0,
+  "failure_rate": 0.05,
+  "invalid_rate": 0.05,
+  "payload_bytes": 0,
+  "events_published": 1720,
+  "events_consumed_ok": 1679,
+  "events_consumed_invalid": 40,
+  "orders_outcome": {
+    "completed": 560,
+    "invalid_sent": 40,
+    "failed": 0,
+    "dropped": 0
+  },
+  "produce_seconds": 60.47,
+  "produce_rate_msg_s": 28.4,
+  "drain_seconds": 5.48,
+  "drain_rate_msg_s": 313.7,
+  "per_instance_consumed": [
+    1719
+  ],
+  "consumer_retryable_attempts": 94,
+  "dlq_counter": 41,
+  "latency": {
+    "e2e": {
+      "p50_ms": 366.86,
+      "p95_ms": 3368.52,
+      "p99_ms": 4524.75
+    },
+    "processing": {
+      "p50_ms": 0.53,
+      "p95_ms": 1.25,
+      "p99_ms": 2.94
+    },
+    "producer_confirm": {
+      "p50_ms": 1.73,
+      "p95_ms": 5.06,
+      "p99_ms": 8.02
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-kafka": 5.9,
+      "order-consumer-kafka": 5.5,
+      "order-producer-rabbitmq": 0.4,
+      "order-consumer-rabbitmq": 0.3,
+      "schema-registry": 0.5,
+      "grafana": 0.1,
+      "kafka": 9.3,
+      "rabbitmq": 2.8,
+      "prometheus": 0.2
+    },
+    "mem_peak_mib": {
+      "order-producer-kafka": 270.3,
+      "order-consumer-kafka": 276.9,
+      "order-producer-rabbitmq": 315.1,
+      "order-consumer-rabbitmq": 274.6,
+      "schema-registry": 290.1,
+      "grafana": 72.0,
+      "kafka": 1074.2,
+      "rabbitmq": 183.2,
+      "prometheus": 74.8
+    },
+    "docker_samples": 19
+  },
+  "backlog_series": [
+    [
+      1.1,
+      17
+    ],
+    [
+      3.3,
+      1
+    ],
+    [
+      5.5,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 1720,
+    "events_consumed_distinct": 1719,
+    "consumer_rows": 1719,
+    "duplicate_rows": 0,
+    "lost": 1,
+    "unexpected": 0,
+    "orders_checked": 560,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 245
+  },
+  "dlq_broker_delta": 41,
+  "label": "transient 5% + invalid 5%"
+}

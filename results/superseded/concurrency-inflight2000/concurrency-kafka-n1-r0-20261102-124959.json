@@ -1,0 +1,92 @@
+{
+  "run_id": "concurrency-kafka-n1-r0-20261102-124959",
+  "transport": "kafka",
+  "orders": 10000,
+  "consumers": 1,
+  "live": false,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 30000,
+  "events_consumed_ok": 30000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 10000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 34519
+  },
+  "produce_seconds": 2.62,
+  "produce_rate_msg_s": 11450.4,
+  "drain_seconds": 4.49,
+  "drain_rate_msg_s": 6681.5,
+  "per_instance_consumed": [
+    30000
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 6093.96,
+      "p95_ms": 7051.85,
+      "p99_ms": 7136.99
+    },
+    "processing": {
+      "p50_ms": 0.51,
+      "p95_ms": 0.96,
+      "p99_ms": 1.11
+    },
+    "producer_confirm": {
+      "p50_ms": 145.9,
+      "p95_ms": 336.98,
+      "p99_ms": 496.01
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-kafka": 2.4,
+      "order-producer-rabbitmq": 0.0,
+      "order-consumer-rabbitmq": 0.1,
+      "schema-registry": 0.1,
+      "grafana": 0.0,
+      "kafka": 2.1,
+      "rabbitmq": 2.1,
+      "prometheus": 0.0,
+      "order-consumer-kafka": 9.3
+    },
+    "mem_peak_mib": {
+      "order-producer-kafka": 274.8,
+      "order-producer-rabbitmq": 326.9,
+      "order-consumer-rabbitmq": 279.4,
+      "schema-registry": 293.2,
+      "grafana": 72.2,
+      "kafka": 1134.6,
+      "rabbitmq": 251.2,
+      "prometheus": 53.9,
+      "order-consumer-kafka": 296.6
+    },
+    "docker_samples": 4
+  },
+  "backlog_series": [
+    [
+      2.2,
+      7902
+    ],
+    [
+      4.5,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 30000,
+    "events_consumed_distinct": 30000,
+    "consumer_rows": 30000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 10000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 0
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "run_id": "concurrency-rabbitmq-n3-r0-20261102-132527",
+  "transport": "rabbitmq",
+  "orders": 10000,
+  "consumers": 3,
+  "live": false,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 30000,
+  "events_consumed_ok": 30000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 10000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 121323
+  },
+  "produce_seconds": 6.68,
+  "produce_rate_msg_s": 4491.0,
+  "drain_seconds": 6.09,
+  "drain_rate_msg_s": 4926.1,
+  "per_instance_consumed": [
+    9261,
+    9038,
+    11701
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 13221.98,
+      "p95_ms": 14207.17,
+      "p99_ms": 14294.74
+    },
+    "processing": {
+      "p50_ms": 0.62,
+      "p95_ms": 3.53,
+      "p99_ms": 9.91
+    },
+    "producer_confirm": {
+      "p50_ms": 16.82,
+      "p95_ms": 37.73,
+      "p99_ms": 82.6
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-rabbitmq": 4.7,
+      "order-consumer-kafka": 0.9,
+      "order-producer-kafka": 0.1,
+      "schema-registry": 0.1,
+      "grafana": 0.0,
+      "kafka": 3.9,
+      "rabbitmq": 7.7,
+      "prometheus": 0.0,
+      "order-consumer-rabbitmq": 18.7
+    },
+    "mem_peak_mib": {
+      "order-producer-rabbitmq": 286.1,
+      "order-consumer-kafka": 1321.8,
+      "order-producer-kafka": 270.8,
+      "schema-registry": 287.4,
+      "grafana": 71.9,
+      "kafka": 1237.0,
+      "rabbitmq": 684.6,
+      "prometheus": 52.3,
+      "order-consumer-rabbitmq": 778.2
+    },
+    "docker_samples": 7
+  },
+  "backlog_series": [
+    [
+      0.0,
+      30000
+    ],
+    [
+      1.0,
+      28078
+    ],
+    [
+      2.1,
+      28078
+    ],
+    [
+      3.1,
+      28078
+    ],
+    [
+      4.1,
+      28078
+    ],
+    [
+      5.1,
+      28078
+    ],
+    [
+      6.1,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 30000,
+    "events_consumed_distinct": 30000,
+    "consumer_rows": 30000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 10000,
+    "orders_out_of_order": 1125,
+    "same_ms_order_pairs": 136
+  }
+}

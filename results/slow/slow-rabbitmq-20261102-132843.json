@@ -1,0 +1,96 @@
+{
+  "run_id": "slow-rabbitmq-20261102-132843",
+  "transport": "rabbitmq",
+  "delay_ms": 20,
+  "offered_msg_s": 300,
+  "orders": 6000,
+  "production_end_s": 60.2,
+  "backlog_peak": 8819,
+  "reprise_after_production_s": 72.87,
+  "events_consumed": 18000,
+  "latency": {
+    "e2e": {
+      "p50_ms": 30000.0,
+      "p95_ms": 30000.0,
+      "p99_ms": 30000.0
+    }
+  },
+  "trace": [
+    {
+      "t": 0.0,
+      "backlog": 0,
+      "inFlight": 1
+    },
+    {
+      "t": 5.0,
+      "backlog": 300,
+      "inFlight": 0
+    },
+    {
+      "t": 10.1,
+      "backlog": 1091,
+      "inFlight": 1
+    },
+    {
+      "t": 15.1,
+      "backlog": 1874,
+      "inFlight": 0
+    },
+    {
+      "t": 20.1,
+      "backlog": 2654,
+      "inFlight": 1
+    },
+    {
+      "t": 25.1,
+      "backlog": 3437,
+      "inFlight": 0
+    },
+    {
+      "t": 30.1,
+      "backlog": 4211,
+      "inFlight": 0
+    },
+    {
+      "t": 35.2,
+      "backlog": 4982,
+      "inFlight": 0
+    },
+    {
+      "t": 40.2,
+      "backlog": 5753,
+      "inFlight": 0
+    },
+    {
+      "t": 45.2,
+      "backlog": 6523,
+      "inFlight": 1
+    },
+    {
+      "t": 50.2,
+      "backlog": 7289,
+      "inFlight": 0
+    },
+    {
+      "t": 55.2,
+      "backlog": 8054,
+      "inFlight": 1
+    },
+    {
+      "t": 60.2,
+      "backlog": 8819,
+      "inFlight": 0
+    }
+  ],
+  "audit": {
+    "events_produced": 18000,
+    "events_consumed_distinct": 18000,
+    "consumer_rows": 18000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 6000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 0
+  }
+}

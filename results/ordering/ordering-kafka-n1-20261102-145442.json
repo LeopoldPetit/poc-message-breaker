@@ -1,0 +1,324 @@
+{
+  "run_id": "ordering-kafka-n1-20261102-145442",
+  "transport": "kafka",
+  "orders": 3000,
+  "consumers": 1,
+  "live": true,
+  "delay_ms": 0,
+  "failure_rate": 0.05,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 9000,
+  "events_consumed_ok": 9000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 3000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 0
+  },
+  "produce_seconds": 30.2,
+  "produce_rate_msg_s": 298.0,
+  "drain_seconds": 134.66,
+  "drain_rate_msg_s": 66.8,
+  "per_instance_consumed": [
+    9000
+  ],
+  "consumer_retryable_attempts": 462,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 30000.0,
+      "p95_ms": 30000.0,
+      "p99_ms": 30000.0
+    },
+    "processing": {
+      "p50_ms": 0.51,
+      "p95_ms": 0.97,
+      "p99_ms": 2.13
+    },
+    "producer_confirm": {
+      "p50_ms": 0.54,
+      "p95_ms": 1.28,
+      "p99_ms": 6.29
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-kafka": 7.5,
+      "order-consumer-kafka": 8.3,
+      "order-producer-rabbitmq": 0.5,
+      "order-consumer-rabbitmq": 0.3,
+      "schema-registry": 0.9,
+      "grafana": 0.2,
+      "kafka": 73.3,
+      "rabbitmq": 8.6,
+      "prometheus": 0.6
+    },
+    "mem_peak_mib": {
+      "order-producer-kafka": 286.3,
+      "order-consumer-kafka": 291.5,
+      "order-producer-rabbitmq": 303.2,
+      "order-consumer-rabbitmq": 301.2,
+      "schema-registry": 291.9,
+      "grafana": 72.5,
+      "kafka": 1264.6,
+      "rabbitmq": 336.0,
+      "prometheus": 70.3
+    },
+    "docker_samples": 47
+  },
+  "backlog_series": [
+    [
+      1.2,
+      7300
+    ],
+    [
+      3.4,
+      7253
+    ],
+    [
+      5.7,
+      7094
+    ],
+    [
+      7.9,
+      6979
+    ],
+    [
+      10.1,
+      6851
+    ],
+    [
+      12.3,
+      6721
+    ],
+    [
+      14.5,
+      6640
+    ],
+    [
+      16.7,
+      6440
+    ],
+    [
+      18.9,
+      6255
+    ],
+    [
+      21.2,
+      6108
+    ],
+    [
+      23.4,
+      6067
+    ],
+    [
+      25.7,
+      5970
+    ],
+    [
+      28.0,
+      5842
+    ],
+    [
+      30.1,
+      5712
+    ],
+    [
+      32.3,
+      5629
+    ],
+    [
+      34.5,
+      5519
+    ],
+    [
+      36.8,
+      5480
+    ],
+    [
+      38.9,
+      5417
+    ],
+    [
+      41.0,
+      5327
+    ],
+    [
+      43.3,
+      5203
+    ],
+    [
+      45.6,
+      5025
+    ],
+    [
+      47.9,
+      4938
+    ],
+    [
+      50.5,
+      4796
+    ],
+    [
+      52.8,
+      4632
+    ],
+    [
+      55.1,
+      4362
+    ],
+    [
+      57.4,
+      4223
+    ],
+    [
+      59.6,
+      4075
+    ],
+    [
+      62.4,
+      3954
+    ],
+    [
+      64.6,
+      3848
+    ],
+    [
+      66.9,
+      3741
+    ],
+    [
+      69.3,
+      3501
+    ],
+    [
+      71.6,
+      3280
+    ],
+    [
+      73.9,
+      3193
+    ],
+    [
+      76.1,
+      3077
+    ],
+    [
+      78.3,
+      2959
+    ],
+    [
+      80.6,
+      2708
+    ],
+    [
+      83.0,
+      2631
+    ],
+    [
+      85.1,
+      2557
+    ],
+    [
+      87.3,
+      2466
+    ],
+    [
+      89.5,
+      2378
+    ],
+    [
+      91.6,
+      2192
+    ],
+    [
+      93.8,
+      1923
+    ],
+    [
+      96.1,
+      1794
+    ],
+    [
+      98.3,
+      1669
+    ],
+    [
+      100.5,
+      1593
+    ],
+    [
+      102.7,
+      1564
+    ],
+    [
+      104.8,
+      1394
+    ],
+    [
+      107.3,
+      1273
+    ],
+    [
+      109.4,
+      1097
+    ],
+    [
+      111.7,
+      1011
+    ],
+    [
+      114.1,
+      856
+    ],
+    [
+      116.3,
+      783
+    ],
+    [
+      118.8,
+      644
+    ],
+    [
+      121.0,
+      499
+    ],
+    [
+      123.3,
+      295
+    ],
+    [
+      125.6,
+      202
+    ],
+    [
+      127.9,
+      70
+    ],
+    [
+      130.1,
+      62
+    ],
+    [
+      132.4,
+      21
+    ],
+    [
+      134.7,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 9000,
+    "events_consumed_distinct": 9000,
+    "consumer_rows": 9000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 3000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 3341
+  }
+}

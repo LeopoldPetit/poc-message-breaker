@@ -1,0 +1,20 @@
+{
+  "run_id": "crash-kafka-20261102-133401",
+  "transport": "kafka",
+  "kill_at_s": 20,
+  "restart_after_s": 10,
+  "recovery_first_ok_after_restart_s": 30.31,
+  "reprise_backlog_zero_after_restart_s": 34.37,
+  "drain_after_end_s": 8.3,
+  "audit": {
+    "events_produced": 9000,
+    "events_consumed_distinct": 9000,
+    "consumer_rows": 9000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 3000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 3073
+  }
+}

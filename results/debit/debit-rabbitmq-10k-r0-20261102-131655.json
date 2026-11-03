@@ -1,0 +1,109 @@
+{
+  "run_id": "debit-rabbitmq-10k-r0-20261102-131655",
+  "transport": "rabbitmq",
+  "orders": 3334,
+  "consumers": 1,
+  "live": false,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 10002,
+  "events_consumed_ok": 10002,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 3334,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 58482
+  },
+  "produce_seconds": 3.62,
+  "produce_rate_msg_s": 2763.0,
+  "drain_seconds": 5.07,
+  "drain_rate_msg_s": 1972.8,
+  "per_instance_consumed": [
+    10002
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 4861.82,
+      "p95_ms": 5640.14,
+      "p99_ms": 5709.33
+    },
+    "processing": {
+      "p50_ms": 0.51,
+      "p95_ms": 0.98,
+      "p99_ms": 2.03
+    },
+    "producer_confirm": {
+      "p50_ms": 21.98,
+      "p95_ms": 66.17,
+      "p99_ms": 119.86
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-rabbitmq": 2.0,
+      "order-consumer-kafka": 0.2,
+      "order-producer-kafka": 0.1,
+      "schema-registry": 0.1,
+      "grafana": 0.0,
+      "kafka": 1.2,
+      "rabbitmq": 1.8,
+      "prometheus": 0.0,
+      "order-consumer-rabbitmq": 7.2
+    },
+    "mem_peak_mib": {
+      "order-producer-rabbitmq": 274.1,
+      "order-consumer-kafka": 302.1,
+      "order-producer-kafka": 302.1,
+      "schema-registry": 287.1,
+      "grafana": 71.9,
+      "kafka": 1236.0,
+      "rabbitmq": 251.8,
+      "prometheus": 52.8,
+      "order-consumer-rabbitmq": 278.6
+    },
+    "docker_samples": 4
+  },
+  "backlog_series": [
+    [
+      0.0,
+      10002
+    ],
+    [
+      1.0,
+      10002
+    ],
+    [
+      2.0,
+      10002
+    ],
+    [
+      3.0,
+      10002
+    ],
+    [
+      4.1,
+      10002
+    ],
+    [
+      5.1,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 10002,
+    "events_consumed_distinct": 10002,
+    "consumer_rows": 10002,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 3334,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 7
+  },
+  "label": "10k"
+}

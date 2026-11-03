@@ -1,0 +1,171 @@
+{
+  "run_id": "debit-kafka-1M-r0-20261102-131655",
+  "transport": "kafka",
+  "orders": 333334,
+  "consumers": 1,
+  "live": false,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 1000002,
+  "events_consumed_ok": 1000002,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 333334,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 666957
+  },
+  "produce_seconds": 50.36,
+  "produce_rate_msg_s": 19857.1,
+  "drain_seconds": 87.84,
+  "drain_rate_msg_s": 11384.4,
+  "per_instance_consumed": [
+    1000002
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 30000.0,
+      "p95_ms": 30000.0,
+      "p99_ms": 30000.0
+    },
+    "processing": {
+      "p50_ms": 0.5,
+      "p95_ms": 0.95,
+      "p99_ms": 0.99
+    },
+    "producer_confirm": {
+      "p50_ms": 4.51,
+      "p95_ms": 8.71,
+      "p99_ms": 14.47
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-kafka": 33.1,
+      "order-producer-rabbitmq": 0.6,
+      "schema-registry": 0.6,
+      "grafana": 0.2,
+      "kafka": 90.2,
+      "rabbitmq": 3.4,
+      "prometheus": 0.3,
+      "order-consumer-kafka": 40.6
+    },
+    "mem_peak_mib": {
+      "order-producer-kafka": 302.6,
+      "order-producer-rabbitmq": 260.5,
+      "schema-registry": 287.0,
+      "grafana": 71.9,
+      "kafka": 1303.6,
+      "rabbitmq": 339.9,
+      "prometheus": 52.8,
+      "order-consumer-kafka": 301.1
+    },
+    "docker_samples": 40
+  },
+  "backlog_series": [
+    [
+      2.2,
+      990432
+    ],
+    [
+      5.8,
+      959486
+    ],
+    [
+      9.6,
+      916916
+    ],
+    [
+      14.7,
+      858365
+    ],
+    [
+      18.2,
+      825354
+    ],
+    [
+      22.5,
+      776241
+    ],
+    [
+      27.5,
+      718559
+    ],
+    [
+      32.1,
+      658452
+    ],
+    [
+      35.3,
+      625291
+    ],
+    [
+      39.6,
+      580228
+    ],
+    [
+      43.5,
+      531102
+    ],
+    [
+      47.0,
+      495412
+    ],
+    [
+      51.9,
+      447316
+    ],
+    [
+      56.2,
+      395321
+    ],
+    [
+      59.8,
+      355154
+    ],
+    [
+      63.6,
+      303109
+    ],
+    [
+      68.9,
+      231792
+    ],
+    [
+      73.0,
+      173384
+    ],
+    [
+      76.7,
+      126614
+    ],
+    [
+      81.0,
+      71783
+    ],
+    [
+      85.7,
+      12920
+    ],
+    [
+      87.8,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 1000002,
+    "events_consumed_distinct": 1000002,
+    "consumer_rows": 1000002,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 333334,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 1
+  },
+  "label": "1M"
+}

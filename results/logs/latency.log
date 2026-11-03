@@ -1,0 +1,12 @@
+[12:40:08] wrote results/latency/latency-kafka-p0-r50-20261102-123903.json
+[12:40:58] wrote results/latency/latency-kafka-p0-r500-20261102-123903.json
+[12:41:48] wrote results/latency/latency-kafka-p1024-r50-20261102-123903.json
+[12:42:38] wrote results/latency/latency-kafka-p1024-r500-20261102-123903.json
+[12:43:29] wrote results/latency/latency-kafka-p10240-r50-20261102-123903.json
+[12:44:19] wrote results/latency/latency-kafka-p10240-r500-20261102-123903.json
+[12:45:35] wrote results/latency/latency-rabbitmq-p0-r50-20261102-123903.json
+[12:46:26] wrote results/latency/latency-rabbitmq-p0-r500-20261102-123903.json
+[12:47:17] wrote results/latency/latency-rabbitmq-p1024-r50-20261102-123903.json
+[12:48:12] wrote results/latency/latency-rabbitmq-p1024-r500-20261102-123903.json
+[12:49:04] wrote results/latency/latency-rabbitmq-p10240-r50-20261102-123903.json
+[12:49:59] wrote results/latency/latency-rabbitmq-p10240-r500-20261102-123903.json

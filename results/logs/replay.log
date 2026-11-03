@@ -1,0 +1,17 @@
+[13:54:16] wrote results/replay/replay-kafka-20261102-135339.json
+Traceback (most recent call last):
+  File "/Users/mac-LPETIT01/github/poc-message-breaker/scripts/bench.py", line 647, in <module>
+    main()
+    ~~~~^^
+  File "/Users/mac-LPETIT01/github/poc-message-breaker/scripts/bench.py", line 643, in main
+    EXPERIMENTS[a.experiment](a)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/mac-LPETIT01/github/poc-message-breaker/scripts/bench.py", line 598, in exp_replay
+    r = produce_then_drain(t, run_id, orders=10000, stream=(t == "rabbitmq"), live=True, rate=20000,
+                           in_flight=2000)
+  File "/Users/mac-LPETIT01/github/poc-message-breaker/scripts/bench.py", line 401, in produce_then_drain
+    wait_load_done(t)
+    ~~~~~~~~~~~~~~^^^
+  File "/Users/mac-LPETIT01/github/poc-message-breaker/scripts/bench.py", line 178, in wait_load_done
+    raise TimeoutError("producer did not finish")
+TimeoutError: producer did not finish

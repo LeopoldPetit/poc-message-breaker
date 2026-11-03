@@ -23,7 +23,7 @@ public class LoadController {
 
     @PostMapping("/start")
     public LoadStatus start(@RequestBody(required = false) LoadRequest request) {
-        return generator.start(request == null ? new LoadRequest(null, null, null, null, null, null, null, null) : request);
+        return generator.start(request == null ? new LoadRequest(null, null, null, null, null, null, null, null, null) : request);
     }
 
     @PostMapping("/stop")

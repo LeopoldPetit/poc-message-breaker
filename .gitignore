@@ -1,5 +1,7 @@
 target/
+results/audit/
 .idea/
 .vscode/
 *.iml
 .DS_Store
+*.pdf
