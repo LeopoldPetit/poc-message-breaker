@@ -3,6 +3,7 @@ package com.github.leopoldpetit.pocmb.producer.publisher;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
+import com.github.leopoldpetit.pocmb.common.AuditLog;
 import com.github.leopoldpetit.pocmb.common.OrderEvents;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Tags;
@@ -12,10 +13,12 @@ public abstract class AbstractOrderEventPublisher implements OrderEventPublisher
 
     private final String transport;
     private final MeterRegistry registry;
+    private final AuditLog audit;
 
     protected AbstractOrderEventPublisher(String transport, MeterRegistry registry) {
         this.transport = transport;
         this.registry = registry;
+        this.audit = AuditLog.fromEnv("producer-" + transport);
     }
 
     @Override
@@ -25,6 +28,10 @@ public abstract class AbstractOrderEventPublisher implements OrderEventPublisher
         return send(orderId, event).whenComplete((ignored, error) -> {
             registry.timer("poc.producer.confirm", tags).record(System.nanoTime() - start, TimeUnit.NANOSECONDS);
             registry.counter(error == null ? "poc.producer.published" : "poc.producer.nacks", tags).increment();
+            if (error == null && audit != null) {
+                audit.record(System.currentTimeMillis() + "," + OrderEvents.eventId(event) + "," + orderId + ","
+                        + OrderEvents.sequence(event) + "," + OrderEvents.type(event) + ",producer,confirmed");
+            }
         });
     }
 

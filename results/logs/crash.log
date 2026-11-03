@@ -1,0 +1,6 @@
+[13:34:44] kafka: consumer killed (SIGKILL)
+[13:34:57] kafka: consumer restarted
+[13:35:32] wrote results/crash/crash-kafka-20261102-133401.json
+[13:36:13] rabbitmq: consumer killed (SIGKILL)
+[13:36:27] rabbitmq: consumer restarted
+[13:36:53] wrote results/crash/crash-rabbitmq-20261102-133401.json

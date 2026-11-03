@@ -1,0 +1,89 @@
+{
+  "run_id": "latency-rabbitmq-p10240-r50-20261102-123903",
+  "transport": "rabbitmq",
+  "orders": 2000,
+  "consumers": 1,
+  "live": true,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 10240,
+  "events_published": 6000,
+  "events_consumed_ok": 6000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 2000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 0
+  },
+  "produce_seconds": 40.43,
+  "produce_rate_msg_s": 148.4,
+  "drain_seconds": 0.01,
+  "drain_rate_msg_s": 600000.0,
+  "per_instance_consumed": [
+    6000
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 0.99,
+      "p95_ms": 4.55,
+      "p99_ms": 11.88
+    },
+    "processing": {
+      "p50_ms": 0.51,
+      "p95_ms": 0.97,
+      "p99_ms": 1.67
+    },
+    "producer_confirm": {
+      "p50_ms": 1.24,
+      "p95_ms": 3.7,
+      "p99_ms": 8.49
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-rabbitmq": 3.8,
+      "order-consumer-rabbitmq": 3.2,
+      "order-producer-kafka": 0.2,
+      "order-consumer-kafka": 0.2,
+      "schema-registry": 0.2,
+      "grafana": 0.0,
+      "kafka": 1.6,
+      "rabbitmq": 7.7,
+      "prometheus": 0.1
+    },
+    "mem_peak_mib": {
+      "order-producer-rabbitmq": 229.1,
+      "order-consumer-rabbitmq": 277.6,
+      "order-producer-kafka": 284.0,
+      "order-consumer-kafka": 289.6,
+      "schema-registry": 293.2,
+      "grafana": 71.9,
+      "kafka": 1132.5,
+      "rabbitmq": 334.1,
+      "prometheus": 53.2
+    },
+    "docker_samples": 12
+  },
+  "backlog_series": [
+    [
+      0.0,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 6000,
+    "events_consumed_distinct": 6000,
+    "consumer_rows": 6000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 2000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 215
+  },
+  "achieved_order_rate": 50.0
+}

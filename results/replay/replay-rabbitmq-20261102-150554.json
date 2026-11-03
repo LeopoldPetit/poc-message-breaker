@@ -1,0 +1,124 @@
+{
+  "run_id": "replay-rabbitmq-20261102-150554",
+  "transport": "rabbitmq",
+  "orders": 10000,
+  "consumers": 1,
+  "live": true,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 30000,
+  "events_consumed_ok": 30000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 10000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 244050
+  },
+  "produce_seconds": 13.09,
+  "produce_rate_msg_s": 2291.8,
+  "drain_seconds": 6.09,
+  "drain_rate_msg_s": 4926.1,
+  "per_instance_consumed": [
+    30000
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 113.06,
+      "p95_ms": 887.48,
+      "p99_ms": 1052.95
+    },
+    "processing": {
+      "p50_ms": 0.54,
+      "p95_ms": 1.34,
+      "p99_ms": 3.91
+    },
+    "producer_confirm": {
+      "p50_ms": 29.71,
+      "p95_ms": 91.6,
+      "p99_ms": 149.56
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-rabbitmq": 7.1,
+      "order-consumer-rabbitmq": 4.4,
+      "order-producer-kafka": 0.1,
+      "order-consumer-kafka": 0.4,
+      "schema-registry": 0.2,
+      "grafana": 0.0,
+      "kafka": 2.8,
+      "rabbitmq": 9.5,
+      "prometheus": 0.1
+    },
+    "mem_peak_mib": {
+      "order-producer-rabbitmq": 287.4,
+      "order-consumer-rabbitmq": 299.9,
+      "order-producer-kafka": 285.3,
+      "order-consumer-kafka": 835.2,
+      "schema-registry": 292.4,
+      "grafana": 72.5,
+      "kafka": 1197.1,
+      "rabbitmq": 351.0,
+      "prometheus": 70.8
+    },
+    "docker_samples": 6
+  },
+  "backlog_series": [
+    [
+      0.0,
+      65
+    ],
+    [
+      1.0,
+      307
+    ],
+    [
+      2.0,
+      307
+    ],
+    [
+      3.0,
+      307
+    ],
+    [
+      4.1,
+      307
+    ],
+    [
+      5.1,
+      307
+    ],
+    [
+      6.1,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 30000,
+    "events_consumed_distinct": 30000,
+    "consumer_rows": 30000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 10000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 30
+  },
+  "replay": {
+    "from": "timestamp:1793628367473",
+    "processed": 30000,
+    "failed": 0,
+    "durationMs": 3622
+  },
+  "replay_matches_published": true,
+  "disk_bytes_per_event": 1435.9,
+  "history": {
+    "quorum_ready_after_consumption": 0,
+    "stream_messages": 1952681
+  }
+}

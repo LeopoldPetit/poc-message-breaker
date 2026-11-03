@@ -1,0 +1,99 @@
+{
+  "run_id": "debit-kafka-100k-r0-20261102-131655",
+  "transport": "kafka",
+  "orders": 33334,
+  "consumers": 1,
+  "live": false,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 100002,
+  "events_consumed_ok": 100002,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 33334,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 93428
+  },
+  "produce_seconds": 6.69,
+  "produce_rate_msg_s": 14948.0,
+  "drain_seconds": 11.7,
+  "drain_rate_msg_s": 8547.2,
+  "per_instance_consumed": [
+    100002
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 13121.73,
+      "p95_ms": 15253.44,
+      "p99_ms": 15649.26
+    },
+    "processing": {
+      "p50_ms": 0.5,
+      "p95_ms": 0.96,
+      "p99_ms": 1.0
+    },
+    "producer_confirm": {
+      "p50_ms": 5.03,
+      "p95_ms": 12.81,
+      "p99_ms": 18.86
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-kafka": 6.0,
+      "order-producer-rabbitmq": 0.1,
+      "schema-registry": 0.1,
+      "grafana": 0.0,
+      "kafka": 9.2,
+      "rabbitmq": 0.2,
+      "prometheus": 0.0,
+      "order-consumer-kafka": 12.5
+    },
+    "mem_peak_mib": {
+      "order-producer-kafka": 290.0,
+      "order-producer-rabbitmq": 258.3,
+      "schema-registry": 287.0,
+      "grafana": 71.8,
+      "kafka": 1220.6,
+      "rabbitmq": 245.0,
+      "prometheus": 55.6,
+      "order-consumer-kafka": 327.5
+    },
+    "docker_samples": 7
+  },
+  "backlog_series": [
+    [
+      2.0,
+      92769
+    ],
+    [
+      5.3,
+      70283
+    ],
+    [
+      9.3,
+      20162
+    ],
+    [
+      11.7,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 100002,
+    "events_consumed_distinct": 100002,
+    "consumer_rows": 100002,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 33334,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 6
+  },
+  "label": "100k"
+}

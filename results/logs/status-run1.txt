@@ -1,0 +1,2 @@
+debit exit=1
+latency exit=0

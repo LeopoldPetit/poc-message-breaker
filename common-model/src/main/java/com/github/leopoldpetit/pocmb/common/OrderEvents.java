@@ -10,6 +10,15 @@ public final class OrderEvents {
     private OrderEvents() {
     }
 
+    public static String eventId(SpecificRecord event) {
+        return switch (event) {
+            case OrderCreatedEvent e -> e.getEventId();
+            case PaymentProcessedEvent e -> e.getEventId();
+            case InventoryReservedEvent e -> e.getEventId();
+            default -> throw unknown(event);
+        };
+    }
+
     public static String orderId(SpecificRecord event) {
         return switch (event) {
             case OrderCreatedEvent e -> e.getOrderId();

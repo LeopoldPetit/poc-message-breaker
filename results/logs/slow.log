@@ -1,0 +1,26 @@
+[13:29:08] kafka slow: t=1.6 backlog=256 inFlight=1
+[13:29:14] kafka slow: t=7.9 backlog=1241 inFlight=0
+[13:29:20] kafka slow: t=14.1 backlog=2229 inFlight=1
+[13:29:26] kafka slow: t=20.3 backlog=3210 inFlight=0
+[13:29:33] kafka slow: t=26.6 backlog=4201 inFlight=0
+[13:29:39] kafka slow: t=33.0 backlog=5209 inFlight=1
+[13:29:45] kafka slow: t=39.3 backlog=6200 inFlight=0
+[13:29:51] kafka slow: t=45.5 backlog=7179 inFlight=0
+[13:29:58] kafka slow: t=51.6 backlog=8138 inFlight=0
+[13:30:04] kafka slow: t=57.9 backlog=9115 inFlight=0
+[13:30:10] kafka slow: t=64.3 backlog=8995 inFlight=0
+[13:31:18] wrote results/slow/slow-kafka-20261102-132843.json
+[13:31:48] rabbitmq slow: t=0.0 backlog=0 inFlight=1
+[13:31:53] rabbitmq slow: t=5.0 backlog=300 inFlight=0
+[13:31:58] rabbitmq slow: t=10.1 backlog=1091 inFlight=1
+[13:32:03] rabbitmq slow: t=15.1 backlog=1874 inFlight=0
+[13:32:08] rabbitmq slow: t=20.1 backlog=2654 inFlight=1
+[13:32:13] rabbitmq slow: t=25.1 backlog=3437 inFlight=0
+[13:32:18] rabbitmq slow: t=30.1 backlog=4211 inFlight=0
+[13:32:23] rabbitmq slow: t=35.2 backlog=4982 inFlight=0
+[13:32:28] rabbitmq slow: t=40.2 backlog=5753 inFlight=0
+[13:32:33] rabbitmq slow: t=45.2 backlog=6523 inFlight=1
+[13:32:38] rabbitmq slow: t=50.2 backlog=7289 inFlight=0
+[13:32:43] rabbitmq slow: t=55.2 backlog=8054 inFlight=1
+[13:32:48] rabbitmq slow: t=60.2 backlog=8819 inFlight=0
+[13:34:01] wrote results/slow/slow-rabbitmq-20261102-132843.json

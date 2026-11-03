@@ -1,0 +1,86 @@
+{
+  "run_id": "slow-kafka-20261102-132843",
+  "transport": "kafka",
+  "delay_ms": 20,
+  "offered_msg_s": 300,
+  "orders": 6000,
+  "production_end_s": 64.3,
+  "backlog_peak": 9115,
+  "reprise_after_production_s": 67.5,
+  "events_consumed": 18000,
+  "latency": {
+    "e2e": {
+      "p50_ms": 30000.0,
+      "p95_ms": 30000.0,
+      "p99_ms": 30000.0
+    }
+  },
+  "trace": [
+    {
+      "t": 1.6,
+      "backlog": 256,
+      "inFlight": 1
+    },
+    {
+      "t": 7.9,
+      "backlog": 1241,
+      "inFlight": 0
+    },
+    {
+      "t": 14.1,
+      "backlog": 2229,
+      "inFlight": 1
+    },
+    {
+      "t": 20.3,
+      "backlog": 3210,
+      "inFlight": 0
+    },
+    {
+      "t": 26.6,
+      "backlog": 4201,
+      "inFlight": 0
+    },
+    {
+      "t": 33.0,
+      "backlog": 5209,
+      "inFlight": 1
+    },
+    {
+      "t": 39.3,
+      "backlog": 6200,
+      "inFlight": 0
+    },
+    {
+      "t": 45.5,
+      "backlog": 7179,
+      "inFlight": 0
+    },
+    {
+      "t": 51.6,
+      "backlog": 8138,
+      "inFlight": 0
+    },
+    {
+      "t": 57.9,
+      "backlog": 9115,
+      "inFlight": 0
+    },
+    {
+      "t": 64.3,
+      "backlog": 8995,
+      "inFlight": 0
+    }
+  ],
+  "audit": {
+    "events_produced": 18000,
+    "events_consumed_distinct": 18000,
+    "consumer_rows": 18000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 6000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 0
+  }
+}

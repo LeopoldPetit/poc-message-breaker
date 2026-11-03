@@ -1,0 +1,28 @@
+{
+  "run_id": "broker-kafka-20261102-133653",
+  "transport": "kafka",
+  "broker_down_s": 27.6,
+  "schema_registry_restarted": false,
+  "outage_to_first_confirm_s": 29.76,
+  "first_confirm_after_recovery_s": 2.13,
+  "orders_outcome": {
+    "completed": 3000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 1035
+  },
+  "producer_nacks": 0,
+  "producer_wall_s": 82.1,
+  "drain_after_end_s": 1.19,
+  "audit": {
+    "events_produced": 9000,
+    "events_consumed_distinct": 9000,
+    "consumer_rows": 9000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 3000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 1348
+  }
+}

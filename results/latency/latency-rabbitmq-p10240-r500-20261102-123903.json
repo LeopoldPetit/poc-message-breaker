@@ -1,0 +1,97 @@
+{
+  "run_id": "latency-rabbitmq-p10240-r500-20261102-123903",
+  "transport": "rabbitmq",
+  "orders": 20000,
+  "consumers": 1,
+  "live": true,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 10240,
+  "events_published": 60000,
+  "events_consumed_ok": 60000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 20000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 91
+  },
+  "produce_seconds": 40.34,
+  "produce_rate_msg_s": 1487.4,
+  "drain_seconds": 2.04,
+  "drain_rate_msg_s": 29411.8,
+  "per_instance_consumed": [
+    60000
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 0.68,
+      "p95_ms": 12.08,
+      "p99_ms": 251.92
+    },
+    "processing": {
+      "p50_ms": 0.51,
+      "p95_ms": 0.96,
+      "p99_ms": 1.24
+    },
+    "producer_confirm": {
+      "p50_ms": 0.79,
+      "p95_ms": 47.82,
+      "p99_ms": 341.78
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-rabbitmq": 8.6,
+      "order-consumer-rabbitmq": 5.3,
+      "order-producer-kafka": 0.1,
+      "order-consumer-kafka": 0.2,
+      "schema-registry": 0.1,
+      "grafana": 0.0,
+      "kafka": 3.2,
+      "rabbitmq": 20.1,
+      "prometheus": 0.1
+    },
+    "mem_peak_mib": {
+      "order-producer-rabbitmq": 382.3,
+      "order-consumer-rabbitmq": 279.6,
+      "order-producer-kafka": 284.1,
+      "order-consumer-kafka": 289.8,
+      "schema-registry": 293.2,
+      "grafana": 72.2,
+      "kafka": 1197.1,
+      "rabbitmq": 294.5,
+      "prometheus": 53.6
+    },
+    "docker_samples": 13
+  },
+  "backlog_series": [
+    [
+      0.0,
+      1
+    ],
+    [
+      1.0,
+      1
+    ],
+    [
+      2.0,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 60000,
+    "events_consumed_distinct": 60000,
+    "consumer_rows": 60000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 20000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 9385
+  },
+  "achieved_order_rate": 500.0
+}

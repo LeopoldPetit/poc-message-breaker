@@ -1,0 +1,126 @@
+{
+  "run_id": "faults-rabbitmq-20261102-135024",
+  "transport": "rabbitmq",
+  "orders": 600,
+  "consumers": 1,
+  "live": true,
+  "delay_ms": 0,
+  "failure_rate": 0.05,
+  "invalid_rate": 0.05,
+  "payload_bytes": 0,
+  "events_published": 1738,
+  "events_consumed_ok": 1707,
+  "events_consumed_invalid": 31,
+  "orders_outcome": {
+    "completed": 569,
+    "invalid_sent": 31,
+    "failed": 0,
+    "dropped": 0
+  },
+  "produce_seconds": 60.31,
+  "produce_rate_msg_s": 28.8,
+  "drain_seconds": 9.12,
+  "drain_rate_msg_s": 190.6,
+  "per_instance_consumed": [
+    1738
+  ],
+  "consumer_retryable_attempts": 103,
+  "dlq_counter": 31,
+  "latency": {
+    "e2e": {
+      "p50_ms": 450.02,
+      "p95_ms": 3378.05,
+      "p99_ms": 4242.64
+    },
+    "processing": {
+      "p50_ms": 0.55,
+      "p95_ms": 1.31,
+      "p99_ms": 2.42
+    },
+    "producer_confirm": {
+      "p50_ms": 3.48,
+      "p95_ms": 6.92,
+      "p99_ms": 11.75
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-rabbitmq": 5.4,
+      "order-consumer-rabbitmq": 2.4,
+      "order-producer-kafka": 0.7,
+      "order-consumer-kafka": 1.7,
+      "schema-registry": 0.6,
+      "grafana": 0.1,
+      "kafka": 5.2,
+      "rabbitmq": 6.3,
+      "prometheus": 0.2
+    },
+    "mem_peak_mib": {
+      "order-producer-rabbitmq": 238.1,
+      "order-consumer-rabbitmq": 251.0,
+      "order-producer-kafka": 267.6,
+      "order-consumer-kafka": 280.4,
+      "schema-registry": 290.1,
+      "grafana": 72.0,
+      "kafka": 1029.1,
+      "rabbitmq": 280.9,
+      "prometheus": 58.7
+    },
+    "docker_samples": 20
+  },
+  "backlog_series": [
+    [
+      0.0,
+      9
+    ],
+    [
+      1.0,
+      9
+    ],
+    [
+      2.0,
+      9
+    ],
+    [
+      3.0,
+      9
+    ],
+    [
+      4.1,
+      38
+    ],
+    [
+      5.1,
+      38
+    ],
+    [
+      6.1,
+      38
+    ],
+    [
+      7.1,
+      38
+    ],
+    [
+      8.1,
+      38
+    ],
+    [
+      9.1,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 1738,
+    "events_consumed_distinct": 1738,
+    "consumer_rows": 1738,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 569,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 322
+  },
+  "dlq_broker_delta": 31,
+  "label": "transient 5% + invalid 5%"
+}

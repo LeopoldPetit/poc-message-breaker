@@ -10,6 +10,7 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.IntStream;
 
 import com.github.leopoldpetit.pocmb.events.InventoryReservedEvent;
@@ -32,6 +33,7 @@ public class LoadGenerator {
     private final OrderEventPublisher publisher;
     private final MeterRegistry registry;
     private final AtomicInteger inFlight = new AtomicInteger();
+    private final AtomicLong submitted = new AtomicLong();
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
     private final ExecutorService workers = Executors.newVirtualThreadPerTaskExecutor();
     private ScheduledFuture<?> ticker;
@@ -47,6 +49,7 @@ public class LoadGenerator {
     public synchronized LoadStatus start(LoadRequest requested) {
         LoadRequest request = requested.resolved();
         cancelTimers();
+        submitted.set(0);
         active = request;
         Semaphore permits = new Semaphore(request.maxInFlight());
         long periodNanos = TimeUnit.SECONDS.toNanos(1) / request.ratePerSecond();
@@ -65,7 +68,7 @@ public class LoadGenerator {
 
     public synchronized LoadStatus status() {
         return new LoadStatus(active != null, publisher.transport(),
-                active == null ? 0 : active.ratePerSecond(), inFlight.get());
+                active == null ? 0 : active.ratePerSecond(), inFlight.get(), submitted.get());
     }
 
     @PreDestroy
@@ -85,10 +88,15 @@ public class LoadGenerator {
     }
 
     private void submit(LoadRequest request, Semaphore permits) {
+        if (request.maxOrders() > 0 && submitted.get() >= request.maxOrders()) {
+            stop();
+            return;
+        }
         if (!permits.tryAcquire()) {
             registry.counter("poc.producer.orders", "outcome", "dropped").increment();
             return;
         }
+        submitted.incrementAndGet();
         workers.execute(() -> {
             try {
                 runOrder(request);

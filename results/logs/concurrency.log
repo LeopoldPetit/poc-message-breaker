@@ -1,0 +1,6 @@
+[13:25:59] wrote results/concurrency/concurrency-kafka-n1-r0-20261102-132527.json
+[13:26:25] wrote results/concurrency/concurrency-kafka-n3-r0-20261102-132527.json
+[13:26:58] wrote results/concurrency/concurrency-kafka-n5-r0-20261102-132527.json
+[13:27:33] wrote results/concurrency/concurrency-rabbitmq-n1-r0-20261102-132527.json
+[13:28:04] wrote results/concurrency/concurrency-rabbitmq-n3-r0-20261102-132527.json
+[13:28:43] wrote results/concurrency/concurrency-rabbitmq-n5-r0-20261102-132527.json

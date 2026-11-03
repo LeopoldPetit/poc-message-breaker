@@ -1,0 +1,8 @@
+debit exit=0
+concurrency exit=0
+slow exit=0
+crash exit=0
+broker exit=0
+faults exit=0
+replay exit=1
+ordering exit=0

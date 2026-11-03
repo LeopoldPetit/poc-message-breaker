@@ -19,11 +19,13 @@ public final class OrderEventProcessor {
     private final OrderSequenceChecker sequenceChecker = new OrderSequenceChecker();
     private final MeterRegistry registry;
     private final AtomicInteger inFlight = new AtomicInteger();
+    private final AuditLog audit;
 
     public OrderEventProcessor(String transport, SimulatedBusinessProcessor business, MeterRegistry registry) {
         this.transport = transport;
         this.business = business;
         this.registry = registry;
+        this.audit = AuditLog.fromEnv("consumer-" + transport);
         registry.gauge("poc.consumer.inflight", Tags.of("transport", transport), inFlight);
     }
 
@@ -47,6 +49,11 @@ public final class OrderEventProcessor {
             status = "retryable";
             throw e;
         } finally {
+            if (audit != null && ("ok".equals(status) || "invalid".equals(status))) {
+                audit.record(System.currentTimeMillis() + "," + OrderEvents.eventId(event) + ","
+                        + OrderEvents.orderId(event) + "," + OrderEvents.sequence(event) + "," + type + ","
+                        + mode.name().toLowerCase(Locale.ROOT) + "," + status);
+            }
             inFlight.decrementAndGet();
             registry.counter("poc.consumer.processed", tags.and("status", status)).increment();
             registry.timer("poc.consumer.processing", tags).record(System.nanoTime() - start, TimeUnit.NANOSECONDS);

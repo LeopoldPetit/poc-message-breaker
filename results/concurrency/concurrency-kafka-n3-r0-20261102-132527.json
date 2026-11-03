@@ -1,0 +1,98 @@
+{
+  "run_id": "concurrency-kafka-n3-r0-20261102-132527",
+  "transport": "kafka",
+  "orders": 10000,
+  "consumers": 3,
+  "live": false,
+  "delay_ms": 0,
+  "failure_rate": 0.0,
+  "invalid_rate": 0.0,
+  "payload_bytes": 0,
+  "events_published": 30000,
+  "events_consumed_ok": 30000,
+  "events_consumed_invalid": 0,
+  "orders_outcome": {
+    "completed": 10000,
+    "invalid_sent": 0,
+    "failed": 0,
+    "dropped": 31931
+  },
+  "produce_seconds": 2.6,
+  "produce_rate_msg_s": 11538.5,
+  "drain_seconds": 8.12,
+  "drain_rate_msg_s": 3694.6,
+  "per_instance_consumed": [
+    18149,
+    5909,
+    5942
+  ],
+  "consumer_retryable_attempts": 0,
+  "dlq_counter": 0,
+  "latency": {
+    "e2e": {
+      "p50_ms": 11748.14,
+      "p95_ms": 14088.73,
+      "p99_ms": 14270.99
+    },
+    "processing": {
+      "p50_ms": 0.51,
+      "p95_ms": 0.97,
+      "p99_ms": 2.07
+    },
+    "producer_confirm": {
+      "p50_ms": 4.16,
+      "p95_ms": 11.56,
+      "p99_ms": 21.43
+    }
+  },
+  "resources": {
+    "cpu_seconds": {
+      "order-producer-kafka": 3.2,
+      "order-consumer-rabbitmq": 0.1,
+      "order-producer-rabbitmq": 0.0,
+      "schema-registry": 0.0,
+      "grafana": 0.0,
+      "kafka": 4.9,
+      "rabbitmq": 0.1,
+      "prometheus": 0.0,
+      "order-consumer-kafka": 21.8
+    },
+    "mem_peak_mib": {
+      "order-producer-kafka": 250.2,
+      "order-consumer-rabbitmq": 292.9,
+      "order-producer-rabbitmq": 310.5,
+      "schema-registry": 287.4,
+      "grafana": 71.9,
+      "kafka": 1238.0,
+      "rabbitmq": 569.5,
+      "prometheus": 52.3,
+      "order-consumer-kafka": 864.7
+    },
+    "docker_samples": 6
+  },
+  "backlog_series": [
+    [
+      2.0,
+      23869
+    ],
+    [
+      5.6,
+      5798
+    ],
+    [
+      8.1,
+      0
+    ]
+  ],
+  "audit": {
+    "events_produced": 30000,
+    "events_consumed_distinct": 30000,
+    "consumer_rows": 30000,
+    "duplicate_rows": 0,
+    "lost": 0,
+    "unexpected": 0,
+    "orders_checked": 10000,
+    "orders_out_of_order": 0,
+    "same_ms_order_pairs": 7
+  }
+}

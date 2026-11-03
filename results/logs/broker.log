@@ -1,0 +1,6 @@
+[13:37:36] kafka: broker stopped
+[13:38:02] kafka: broker healthy again
+[13:38:37] wrote results/broker/broker-kafka-20261102-133653.json
+[13:39:18] rabbitmq: broker stopped
+[13:39:45] rabbitmq: broker healthy again
+[13:50:24] wrote results/broker/broker-rabbitmq-20261102-133653.json

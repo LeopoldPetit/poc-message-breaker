@@ -1,0 +1,6 @@
+[13:17:27] wrote results/debit/debit-kafka-10k-r0-20261102-131655.json
+[13:17:57] wrote results/debit/debit-kafka-100k-r0-20261102-131655.json
+[13:20:25] wrote results/debit/debit-kafka-1M-r0-20261102-131655.json
+[13:21:03] wrote results/debit/debit-rabbitmq-10k-r0-20261102-131655.json
+[13:21:43] wrote results/debit/debit-rabbitmq-100k-r0-20261102-131655.json
+[13:25:27] wrote results/debit/debit-rabbitmq-1M-r0-20261102-131655.json
